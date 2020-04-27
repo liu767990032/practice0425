@@ -30,5 +30,5 @@ build/
 ### VS Code ###
 .vscode/
 
-### other ###
+### other(如果git上已有该文件，删除该文件提交git即可) ###
 logs/
