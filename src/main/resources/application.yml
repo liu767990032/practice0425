@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@//111.229.45.58:1521/helowin
+    username: system
+    password: system
+server:
+  port: 8080
+
+logging:
+  file:
+    path: logs/
