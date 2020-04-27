@@ -1,9 +1,18 @@
 spring:
   datasource:
+    #数据库url，必配
     url: jdbc:oracle:thin:@//111.229.45.58:1521/helowin
+    #数据库用户名，必配
     username: system
+    #数据库密码，必配
     password: system
+    #数据库驱动，可不配
+    driver-class-name: oracle.jdbc.OracleDriver
+    #数据库连接池,可不配,默认hikari.pool
+    type: com.alibaba.druid.pool.DruidDataSource
+
 server:
+  #端口号，可不配，默认8080
   port: 8080
 
 logging:
