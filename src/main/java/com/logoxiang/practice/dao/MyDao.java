@@ -10,4 +10,6 @@ import java.util.Map;
 public interface MyDao {
 
     List<Map<String,Object>> getCommonQuestionList();
+
+    List<Map<String, Object>> getCommonQuestionList2();
 }

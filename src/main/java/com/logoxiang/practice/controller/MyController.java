@@ -5,9 +5,7 @@ import com.logoxiang.practice.dao.MyDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -24,9 +22,16 @@ public class MyController {
 
     private Logger logger = LoggerFactory.getLogger(MyController.class);
 
-    @RequestMapping("getCommonQuestionList")
+    @GetMapping("getCommonQuestionList")
     public List<Map<String, Object>> getCommonQuestionList() {
         List<Map<String, Object>> commonQuestionList = myDao.getCommonQuestionList();
+        logger.info("获取问题信息列表："+ JSON.toJSONString(commonQuestionList));
+        return commonQuestionList;
+    }
+
+    @GetMapping("getCommonQuestionList2")
+    public List<Map<String, Object>> getCommonQuestionList2() {
+        List<Map<String, Object>> commonQuestionList = myDao.getCommonQuestionList2();
         logger.info("获取问题信息列表："+ JSON.toJSONString(commonQuestionList));
         return commonQuestionList;
     }

@@ -25,4 +25,12 @@ public class MyDaoImpl implements MyDao {
         return jdbcTemplate.queryForList(sql.toString());
     }
 
+    @Override
+    public List<Map<String, Object>> getCommonQuestionList2(){
+        StringBuilder sql = new StringBuilder();
+        sql.append(" select question_id \"questionId\",question_title \"questionTitle\", question_answer \"questionAnswer\" ");
+        sql.append(" from t_common_question ");
+        return jdbcTemplate.queryForList(sql.toString());
+    }
+
 }
