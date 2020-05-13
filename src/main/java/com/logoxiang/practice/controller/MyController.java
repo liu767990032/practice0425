@@ -2,6 +2,7 @@ package com.logoxiang.practice.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.logoxiang.practice.dao.MyDao;
+import com.logoxiang.practice.util.NetUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +35,12 @@ public class MyController {
         List<Map<String, Object>> commonQuestionList = myDao.getCommonQuestionList2();
         logger.info("获取问题信息列表："+ JSON.toJSONString(commonQuestionList));
         return commonQuestionList;
+    }
+
+    @GetMapping("getWeather")
+    public String getWeatherData(){
+        NetUtils.Result result = NetUtils.get("http://t.weather.sojson.com/api/weather/city/101030100", null, "UTF-8");
+        logger.info("***"+result.getRespString());
+        return result.getRespString();
     }
 }

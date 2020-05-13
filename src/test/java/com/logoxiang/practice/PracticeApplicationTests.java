@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 @SpringBootTest
 class PracticeApplicationTests {
@@ -26,6 +27,12 @@ class PracticeApplicationTests {
     public void test0023(){
         List<Map<String, Object>> commonQuestionList = myDao.getCommonQuestionList();
         System.out.println(commonQuestionList);
+    }
+
+    @Test
+    public void test4(){
+        Properties properties = System.getProperties();
+        System.out.println(properties);
     }
 
 }
