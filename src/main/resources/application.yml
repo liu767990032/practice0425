@@ -1,13 +1,13 @@
 spring:
   datasource:
     #数据库url，必配
-    url: jdbc:oracle:thin:@//111.229.45.58:1521/helowin
+    url: jdbc:mysql://111.229.45.58:3306/practice
     #数据库用户名，必配
-    username: system
+    username: root
     #数据库密码，必配
-    password: system
+    password: 123456
     #数据库驱动，可不配
-    driver-class-name: oracle.jdbc.OracleDriver
+    driver-class-name: com.mysql.jdbc.Driver
     #数据库连接池,可不配,默认hikari.pool
     type: com.alibaba.druid.pool.DruidDataSource
     # 下面为连接池的补充设置，应用到上面所有数据源中

@@ -6,9 +6,12 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+/**
+ * @author liu76
+ */
 @SpringBootApplication
-@EnableScheduling
-@MapperScan("com.logoxiang.practice.dao")
+//@EnableScheduling
+@MapperScan("com.logoxiang.practice.taskDao")
 public class PracticeApplication {
 
     public static void main(String[] args) {

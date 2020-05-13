@@ -21,7 +21,7 @@ public class MyDaoImpl implements MyDao {
     @Override
     public List<Map<String, Object>> getCommonQuestionList() {
         StringBuilder sql = new StringBuilder();
-        sql.append(" select * from t_common_question ");
+        sql.append(" select * from T_COMMON_QUESTION ");
         return jdbcTemplate.queryForList(sql.toString());
     }
 
@@ -29,7 +29,7 @@ public class MyDaoImpl implements MyDao {
     public List<Map<String, Object>> getCommonQuestionList2(){
         StringBuilder sql = new StringBuilder();
         sql.append(" select question_id \"questionId\",question_title \"questionTitle\", question_answer \"questionAnswer\" ");
-        sql.append(" from t_common_question ");
+        sql.append(" from T_COMMON_QUESTION ");
         return jdbcTemplate.queryForList(sql.toString());
     }
 

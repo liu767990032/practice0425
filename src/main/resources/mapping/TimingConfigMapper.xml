@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.logoxiang.practice.taskDao.TimingConfigDao">
+
+    <resultMap id="InterfaceResultMap" type="com.logoxiang.practice.entity.TimingInterface">
+        <result column="INTERFACE_ID" property="interfaceId" jdbcType="VARCHAR"/>
+        <result column="INTERFACE_NAME" property="interfaceName" jdbcType="VARCHAR"/>
+        <result column="INTERFACE_REMARK" property="interfaceRemark" jdbcType="VARCHAR"/>
+        <result column="TRIGGER_STRATEGY" property="triggerStrategy" jdbcType="VARCHAR"/>
+        <result column="RUN_STATE" property="runState" jdbcType="VARCHAR"/>
+        <result column="FTP_ID" property="ftpId" jdbcType="VARCHAR"/>
+        <result column="FILE_PREFIX" property="filePrefix" jdbcType="VARCHAR"/>
+        <result column="ACCOUNT_PERIOD_TYPE" property="accountPeriodType" jdbcType="VARCHAR"/>
+        <result column="DATE_COUNT" property="dateCount" jdbcType="VARCHAR"/>
+        <result column="TABLE_NAME" property="tableName" jdbcType="VARCHAR"/>
+        <result column="STATE" property="state" jdbcType="VARCHAR"/>
+        <result column="ACCOUNT_FORMAT" property="accountFormat" jdbcType="VARCHAR"/>
+        <result column="INTERFACE_URL" property="interfaceUrl" jdbcType="VARCHAR"/>
+        <result column="RESP_PROCESSOR" property="respProcessor" jdbcType="VARCHAR"/>
+        <result column="WARN_NUMBER" property="warnNumber" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="getTimingInterfaceList" resultMap="InterfaceResultMap">
+    select
+    ti.INTERFACE_ID, ti.INTERFACE_NAME, ti.INTERFACE_REMARK, ti.TRIGGER_STRATEGY, ti.RUN_STATE, ti.FTP_ID, ti.WARN_NUMBER,
+    ti.FILE_PREFIX, ti.ACCOUNT_PERIOD_TYPE, ti.DATE_COUNT, ti.TABLE_NAME, ti.STATE, ti.is_continued,ti.ACCOUNT_FORMAT,ti.interface_url,ti.resp_processor
+    from T_S_TIMTING_INTERFACE ti
+    where  ti.RUN_STATE='0' and ti.type = #{type}
+  </select>
+
+</mapper>
