@@ -1,6 +1,7 @@
 package com.logoxiang.practice;
 
 import com.logoxiang.practice.dao.MyDao;
+import org.jasypt.util.text.BasicTextEncryptor;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -31,8 +32,12 @@ class PracticeApplicationTests {
 
     @Test
     public void test4(){
-        Properties properties = System.getProperties();
-        System.out.println(properties);
+        BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
+        //加密所需的salt(盐)
+        textEncryptor.setPassword("liuxiang");
+        //要加密的数据（数据库的用户名或密码）
+        String password = textEncryptor.encrypt("123456");
+        System.out.println("password:"+password);
     }
 
 }

@@ -1,3 +1,7 @@
+#加密salt(盐)
+jasypt:
+  encryptor:
+    password: liuxiang
 spring:
   datasource:
     #数据库url，必配
@@ -5,7 +9,7 @@ spring:
     #数据库用户名，必配
     username: root
     #数据库密码，必配
-    password: 123456
+    password: ENC(YnD8GkZlY91boNpZWppl6w==)
     #数据库驱动，可不配
     driver-class-name: com.mysql.jdbc.Driver
     #数据库连接池,可不配,默认hikari.pool
